@@ -13,6 +13,18 @@ html {
 }
 
 body {
-  color: $violet;
-  background: $green;
+  align-items: center;
+  background-color: lightblue;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#canvas {
+  background: white;
+  border: 1px solid black;
 }
