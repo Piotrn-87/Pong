@@ -8,26 +8,25 @@
   <title>Site title</title>
   <meta name="description" content="Description" />
 
-  <!-- Title -->
-  <meta property="og:title" content="Piotr Napieralski Portfolio CV" />
-  <!-- OPTIONAL description -->
-  <meta property="og:description" content="Personal site with project list and skills" />
-  <!-- full url with http(s) ie. https://piotrn-87.github.io/my-repo/ -->
-  <meta property="og:url" content="https://piotrn-87.github.io/portfolio" />
-  <!-- full url to the image with http(s) ie. https://piotrn-87.github.io/my-repo/assets/img/cover.png. Facebook suggests at least 1200 x 630 -->
-  <meta property="og:image" content="https://piotrn-87.github.io/portfolio/assets/img/cover.png" />
+  <meta property="og:title" content="Pong" />
+  <meta property="og:description" content="Pong - Table Tenis Game" />
+  <meta property="og:url" content="https://piotrn-87.github.io/Pong" />
+  <meta property="og:image" content="https://piotrn-87.github.io/Pong/assets/img/ball.png" />
 
   <link rel="manifest" href="manifest.json" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <link rel="apple-touch-icon" sizes="192x192" href="assets/pwa/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="assets/pwa/icons/ball.png" />
 
-  <link rel="icon" type="image/png" href="assets/pwa/icons/icon-192x192.png" />
+  <link rel="icon" type="image/png" href="assets/pwa/icons/ball.png" />
 
   <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-  <h1>Hello world - with simple PWA support!</h1>
+  <h1>PONG</h1>
+
+  <img class="ball" id="ball" src="/assets/img/ball.png" alt="ball" width="40" height="40">
+  <canvas id="canvas" width="600" height="400"></canvas>
 
   <script src="js/main.js"></script>
 </body>

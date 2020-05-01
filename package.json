@@ -1,5 +1,5 @@
 {
-  "name": "wtf-gulp-starter",
+  "name": "gulp_starter",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maciejkorsan/wtf-gulp-starter.git"
+    "url": "git+https://github.com/Piotrn-87/Pong.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maciejkorsan/wtf-gulp-starter/issues"
+    "url": "https://github.com/Piotrn-87/Pong/issues"
   },
-  "homepage": "https://github.com/maciejkorsan/wtf-gulp-starter#readme",
+  "homepage": "https://github.com/Piotrn-87/Pong#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
