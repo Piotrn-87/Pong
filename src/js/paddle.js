@@ -44,8 +44,13 @@ export default class Paddle {
     this.speed = 0;
   }
 
-  update(deltaTime) {
+  update() {
     this.position.x = this.position.x + this.speed;
+    if (this.position.x < 0) {
+      this.position.x = 3;
+    } else if (this.position.x + this.paddleWidth > this.gameWidth) {
+      this.position.x = this.gameWidth - this.paddleWidth - 3;
+    }
   }
 
   paint(ctx) {

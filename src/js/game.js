@@ -9,8 +9,8 @@ export default class Game {
     this.paddle = new Paddle(this);
   }
 
-  update(deltaTime) {
-    this.paddle.update(deltaTime);
+  update() {
+    this.paddle.update();
   }
   draw(ctx) {
     this.paddle.paint(ctx);
