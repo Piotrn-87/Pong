@@ -44,6 +44,10 @@ export default class Paddle {
     this.speed = 0;
   }
 
+  update(deltaTime) {
+    this.position.x = this.position.x + this.speed;
+  }
+
   paint(ctx) {
     ctx.fillStyle = "#0ff";
     ctx.fillRect(
