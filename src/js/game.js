@@ -8,7 +8,6 @@ export default class Game {
   start() {
     this.paddle = new Paddle(this);
   }
-
   draw(ctx) {
     this.paddle.paint(ctx);
   }
