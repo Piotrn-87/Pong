@@ -1,11 +1,15 @@
+const PADDLE_WIDTH = 100; //Paddle width in px
+const PADDLE_HEIGHT = 20; //Paddle height in px
+const SPEED = 0; //Initial speed in px per seconds
+const MAX_SPEED = 4; //Maximum speed in px per seconds
 export default class Paddle {
   constructor(game) {
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
-    this.paddleWidth = 100;
-    this.paddleHeight = 20;
-    this.speed = 0;
-    this.maxSpeed = 4;
+    this.paddleWidth = PADDLE_WIDTH;
+    this.paddleHeight = PADDLE_HEIGHT;
+    this.speed = SPEED;
+    this.maxSpeed = MAX_SPEED;
     this.position = {
       x: game.gameWidth / 2 - this.paddleWidth / 2,
       y: game.gameHeight - this.paddleHeight * 1.2,
@@ -44,7 +48,7 @@ export default class Paddle {
     this.speed = 0;
   }
 
-  up() {
+  upgrade() {
     this.position.x = this.position.x + this.speed;
     if (this.position.x < 0) {
       this.position.x = 3;
