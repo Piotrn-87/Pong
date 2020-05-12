@@ -2,6 +2,8 @@ const PADDLE_WIDTH = 100; //Paddle width in px
 const PADDLE_HEIGHT = 20; //Paddle height in px
 const SPEED = 0; //Initial speed in px per seconds
 const MAX_SPEED = 4; //Maximum speed in px per seconds
+const HALF = 2; //Half of paddle and game width
+const GOLDEN_RATIO = 1.61; //FIBO in px
 export default class Paddle {
   constructor(game) {
     this.gameWidth = game.gameWidth;
@@ -11,8 +13,8 @@ export default class Paddle {
     this.speed = SPEED;
     this.maxSpeed = MAX_SPEED;
     this.position = {
-      x: game.gameWidth / 2 - this.paddleWidth / 2,
-      y: game.gameHeight - this.paddleHeight * 1.2,
+      x: game.gameWidth / HALF - this.paddleWidth / HALF,
+      y: game.gameHeight - this.paddleHeight * GOLDEN_RATIO,
     };
 
     document.addEventListener("keydown", (event) => {
@@ -49,7 +51,7 @@ export default class Paddle {
   }
 
   upgrade() {
-    this.position.x = this.position.x + this.speed;
+    this.position.x += this.speed;
     if (this.position.x < 0) {
       this.position.x = 3;
     } else if (this.position.x + this.paddleWidth > this.gameWidth) {
