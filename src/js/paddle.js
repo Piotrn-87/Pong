@@ -44,7 +44,7 @@ export default class Paddle {
     this.speed = 0;
   }
 
-  update() {
+  up() {
     this.position.x = this.position.x + this.speed;
     if (this.position.x < 0) {
       this.position.x = 3;

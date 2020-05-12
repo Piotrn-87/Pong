@@ -1,6 +1,8 @@
 import Game from "./game";
 
-let canvas = document.getElementById("canvas");
+const CANVAS = "canvas";
+
+let canvas = document.getElementById(CANVAS);
 let ctx = canvas.getContext("2d");
 
 const GAME_WIDTH = 600;
@@ -15,7 +17,7 @@ function gameLoop(timeStamp) {
   lastTime = timeStamp;
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-  game.update(deltaTime);
+  game.up(deltaTime);
   game.draw(ctx);
 
   requestAnimationFrame(gameLoop);
