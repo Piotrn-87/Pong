@@ -8,7 +8,6 @@ let canvas = document.getElementById(CANVAS);
 if (!canvas) {
   console.warn("Zjebałeś, Zjebałeś !!!");
 }
-
 let ctx = canvas.getContext("2d");
 
 let game = new Game(GAME_WIDTH, GAME_HEIGHT);
