@@ -78,6 +78,14 @@ export default class Paddle {
     } else if (this.position.x + this.paddleWidth > this.gameWidth) {
       this.position.x = this.gameWidth - this.paddleWidth - 3;
     }
+    if (this.position.y < 0) {
+      this.position.y = 3;
+    } else if (
+      this.position.y >
+      this.gameHeight - this.paddleHeight * GOLDEN_RATIO
+    ) {
+      this.position.y = this.gameHeight - this.paddleHeight * GOLDEN_RATIO;
+    }
   }
 
   paint(ctx) {
