@@ -4,11 +4,9 @@ export default class Game {
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
   }
-
   start() {
     this.paddle = new Paddle(this);
   }
-
   upgrade() {
     this.paddle.upgrade();
   }
