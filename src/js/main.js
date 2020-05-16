@@ -1,12 +1,12 @@
 import Game from "./game";
 
-const CANVAS = "canvas";
+const CANVAS = "canvass";
 const GAME_WIDTH = 600;
 const GAME_HEIGHT = 400;
 
 let canvas = document.getElementById(CANVAS);
 if (!canvas) {
-  console.warn("Zjebałeś, Zjebałeś !!!");
+  console.warn("%c My Friend", "color: magenta", "Zjebales !!!");
 }
 let ctx = canvas.getContext("2d");
 
