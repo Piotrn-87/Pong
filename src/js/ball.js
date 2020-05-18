@@ -1,6 +1,7 @@
 const BALL = document.getElementById("ball");
 const SIZE = 30; // Ball size in px
 const SPEED = 4; // Ball speed in px
+const GOLDEN_RATIO = 1.61; // FIBONACCI
 
 export default class Ball {
   constructor(game) {
@@ -9,7 +10,7 @@ export default class Ball {
     this.gameHeight = game.gameHeight;
     this.image = BALL;
     this.size = SIZE;
-    this.speed = { x: 4, y: 4 };
+    this.speed = { x: SPEED, y: SPEED };
     this.position = {
       x: game.gameWidth / 2 - this.size / 2,
       y: game.gameHeight / 8,
@@ -25,11 +26,11 @@ export default class Ball {
     );
   }
   update() {
-    let bottomOfBall = this.position.y + this.size;
+    let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
     let topOfPaddle = this.game.paddle.position.y;
     let leftSideOfPaddle = this.game.paddle.position.x;
     let rightSideOfPaddle =
-      this.game.paddle.position.x + this.game.paddle.paddleWidth;
+      this.game.paddle.position.x + this.game.paddle.paddleWidth / 2;
 
     if (
       bottomOfBall >= topOfPaddle &&
