@@ -1,6 +1,6 @@
 import Game from "./game";
 
-const CANVAS = "canvass";
+const CANVAS = "canvas";
 const GAME_WIDTH = 600;
 const GAME_HEIGHT = 400;
 
@@ -25,3 +25,10 @@ function gameLoop(timeStamp) {
   requestAnimationFrame(gameLoop);
 }
 requestAnimationFrame(gameLoop);
+
+console.time("looper");
+let i = 0;
+while (i < 1000000) {
+  i++;
+}
+console.timeEnd("looper");

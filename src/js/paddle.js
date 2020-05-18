@@ -88,7 +88,7 @@ export default class Paddle {
     }
   }
 
-  paint(ctx) {
+  draw(ctx) {
     ctx.fillStyle = "#0ff";
     ctx.fillRect(
       this.position.x,
