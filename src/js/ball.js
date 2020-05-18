@@ -1,16 +1,15 @@
 const BALL = document.getElementById("ball");
-const SIZE = 40; // size of ball in px
-const SPEED = 4;
+const SIZE = 40;
+
 export default class Ball {
   constructor(game) {
-    this.image = BALL;
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
-    this.speed = { x: SPEED, y: SPEED };
+    this.image = BALL;
     this.size = SIZE;
     this.position = {
-      x: game.gameWidth / 2 - this.size / 2,
-      y: game.gameHeight / this.size,
+      x: this.gameWidth / 2 - this.size / 2,
+      y: this.gameHeight / this.size,
     };
   }
   draw(ctx) {

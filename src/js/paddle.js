@@ -4,7 +4,7 @@ const MAX_SPEED = 4; //Maximum speed per seconds in px
 const PADDLE_WIDTH = 100; //Paddle width in px
 const PADDLE_HEIGHT = 20; //Paddle height in px
 const SPEED = 0; //Initial speed per seconds in px
-let hue = 0;
+let hue = 180;
 export default class Paddle {
   constructor(game) {
     this.gameWidth = game.gameWidth;
