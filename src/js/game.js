@@ -9,8 +9,9 @@ export default class Game {
     this.paddle = new Paddle(this);
     this.ball = new Ball(this);
   }
-  upgrade() {
-    this.paddle.upgrade();
+  update(deltaTime) {
+    this.paddle.update(deltaTime);
+    this.ball.update(deltaTime);
   }
   draw(ctx) {
     this.paddle.draw(ctx);

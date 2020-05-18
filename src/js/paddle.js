@@ -72,7 +72,7 @@ export default class Paddle {
     this.speedY = 0;
   }
 
-  upgrade() {
+  update(deltaTime) {
     this.position.x += this.speedX;
     this.position.y = this.position.y + this.speedY;
     if (this.position.x < 0) {

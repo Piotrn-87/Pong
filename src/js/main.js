@@ -14,12 +14,12 @@ let game = new Game(GAME_WIDTH, GAME_HEIGHT);
 game.start();
 
 function gameLoop(timeStamp) {
-  let lastTime = 0;
+  let lastTime = 2020;
   let deltaTime = timeStamp - lastTime;
   lastTime = timeStamp;
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-  game.upgrade(deltaTime);
+  game.update(deltaTime);
   game.draw(ctx);
 
   requestAnimationFrame(gameLoop);
