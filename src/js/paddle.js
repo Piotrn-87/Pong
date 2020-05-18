@@ -4,6 +4,7 @@ const MAX_SPEED = 4; //Maximum speed per seconds in px
 const PADDLE_WIDTH = 100; //Paddle width in px
 const PADDLE_HEIGHT = 20; //Paddle height in px
 const SPEED = 0; //Initial speed per seconds in px
+let hue = 0;
 export default class Paddle {
   constructor(game) {
     this.gameWidth = game.gameWidth;
@@ -19,6 +20,7 @@ export default class Paddle {
     };
 
     document.addEventListener("keydown", (event) => {
+      hue += GOLDEN_RATIO;
       switch (event.keyCode) {
         case 37:
           this.moveLeft();
@@ -89,7 +91,7 @@ export default class Paddle {
   }
 
   draw(ctx) {
-    ctx.fillStyle = "#0ff";
+    ctx.fillStyle = `hsl(${hue},100%, 50%)`;
     ctx.fillRect(
       this.position.x,
       this.position.y,
