@@ -3,6 +3,8 @@ const SIZE = 30; // Ball size in px
 const SPEED = 4; // Ball speed in px
 const GOLDEN_RATIO = 1.61; // FIBONACCI
 
+let pause = false;
+
 export default class Ball {
   constructor(game) {
     this.game = game;
@@ -25,6 +27,7 @@ export default class Ball {
       this.size
     );
   }
+
   update() {
     let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
     let topOfPaddle = this.game.paddle.position.y;

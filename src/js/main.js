@@ -6,9 +6,19 @@ const GAME_HEIGHT = 400;
 
 let canvas = document.getElementById(CANVAS);
 if (!canvas) {
-  console.warn("%c My Friend", "color: magenta", "Zjebales !!!");
+  console.warn("%c My Friend", "color: magenta", "Zjebales sth.. !!!");
 }
 let ctx = canvas.getContext("2d");
+let pause = false;
+
+document.addEventListener("keydown", keyDown);
+
+function keyDown(event) {
+  switch (event.keyCode) {
+    case 80:
+      pause = !pause;
+  }
+}
 
 let game = new Game(GAME_WIDTH, GAME_HEIGHT);
 game.start();
@@ -19,7 +29,10 @@ function gameLoop(timeStamp) {
   lastTime = timeStamp;
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
-  game.update(deltaTime);
+
+  if (!pause) {
+    game.update(deltaTime);
+  }
   game.draw(ctx);
 
   requestAnimationFrame(gameLoop);
