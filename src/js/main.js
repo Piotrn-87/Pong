@@ -6,7 +6,7 @@ const GAME_HEIGHT = 400;
 
 let canvas = document.getElementById(CANVAS);
 if (!canvas) {
-  console.warn("%c My Friend", "color: magenta", "Zjebales sth.. !!!");
+  console.warn("%c My Friend", "color: magenta", "Zjebales !!!");
 }
 let ctx = canvas.getContext("2d");
 let pause = false;
