@@ -12,17 +12,19 @@ export default class Game {
   start() {
     this.paddle = new Paddle(this);
     this.ball = new Ball(this);
+    this.brcik = new Brick(this);
 
-    this.gameObject = [this.paddle, this.ball];
+    // this.gameObject = [this.paddle, this.ball];
   }
   update() {
-    // this.paddle.update();
-    // this.ball.update();
-    this.gameObject.forEach((element) => element.update());
+    this.paddle.update();
+    this.ball.update();
+    // this.gameObject.forEach((element) => element.update());
   }
   draw(ctx) {
-    // this.paddle.draw(ctx);
-    // this.ball.draw(ctx);
-    this.gameObject.forEach((element) => element.draw(ctx));
+    this.paddle.draw(ctx);
+    this.ball.draw(ctx);
+    this.brcik.draw(ctx);
+    // this.gameObject.forEach((element) => element.draw(ctx));
   }
 }
