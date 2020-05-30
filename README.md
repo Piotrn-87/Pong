@@ -6,4 +6,4 @@
 
 `gulp`
 
-To publish your page using github pages use `npm run deploy`.
+To publish your page using github pages use `npm run deploy`
