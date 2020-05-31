@@ -1,7 +1,7 @@
 import Game from "./game";
 
 const CANVAS = "canvas";
-const GAME_WIDTH = 600;
+const GAME_WIDTH = 620;
 const GAME_HEIGHT = 400;
 const KEYPASUE = 80;
 

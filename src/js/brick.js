@@ -1,12 +1,12 @@
 const BRICK = document.getElementById("brick");
-const WIDTH = 30;
-const HEIGHT = 20;
+const BRICK_WIDTH = 30;
+const BRICK_HEIGHT = 20;
 export default class Brick {
   constructor(game, position) {
     this.image = BRICK;
     this.game = game;
-    this.width = WIDTH;
-    this.height = HEIGHT;
+    this.width = BRICK_WIDTH;
+    this.height = BRICK_HEIGHT;
     this.position = position;
   }
 
