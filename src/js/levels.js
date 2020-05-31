@@ -8,14 +8,13 @@ export function buildLevel(game, level1) {
     y.forEach((x, xIndex) => {
       if (x === 1) {
         bricks.push(
-          new Brick(this, { x: 31 * xIndex, y: 21 * yIndex + HEIGHT_BRICK })
+          new Brick(game, { x: 31 * xIndex, y: 21 * yIndex + HEIGHT_BRICK })
         );
       }
     });
   });
   return bricks;
 }
-
 export const level1 = [
   [0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0],
   [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
