@@ -33,7 +33,7 @@ export default class Ball {
     let topOfPaddle = this.game.paddle.position.y;
     let leftSideOfPaddle = this.game.paddle.position.x;
     let rightSideOfPaddle =
-      this.game.paddle.position.x + this.game.paddle.paddleWidth / 2;
+      this.game.paddle.position.x + this.game.paddle.paddleWidth;
 
     if (
       bottomOfBall >= topOfPaddle &&
