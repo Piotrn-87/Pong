@@ -1,23 +1,25 @@
 import Brick from "./brick";
 
-const HEIGHT_BRICK = 30;
+const BRICK_HEIGHT = 30;
 let bricks = [];
 export function buildLevel(game, level1) {
-  level1.forEach((y, yIndex) => {
-    y.forEach((x, xIndex) => {
-      if (x === 1) {
+  level1.forEach((elementY, rowAmount) => {
+    elementY.forEach((elementX, brickAmount) => {
+      if (elementX === 1) {
         bricks.push(
-          new Brick(game, { x: 31 * xIndex, y: 21 * yIndex + HEIGHT_BRICK })
+          new Brick(game, {
+            x: 32 * brickAmount,
+            y: 21 * rowAmount + BRICK_HEIGHT,
+          })
         );
       }
     });
   });
-  level1.forEach((elementY) => {
-    // console.log(elementY);
-    elementY.forEach((elementX) => {
-      console.log(elementX);
-    });
-  });
+  // level1.forEach((elementY) => {
+  //   elementY.forEach((elementX) => {
+  //     console.log(elementX);
+  //   });
+  // });
 
   return bricks;
 }
