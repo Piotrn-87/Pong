@@ -102,5 +102,5 @@ export default class Paddle {
 }
 
 window.addEventListener("keydown", (ev) => {
-  console.warn(ev.keyCode);
+  console.log(ev.keyCode);
 });

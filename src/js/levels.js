@@ -1,6 +1,7 @@
 import Brick from "./brick";
 
-const BRICK_HEIGHT = 30;
+const BRICK_HEIGHT = 21;
+const BRICK_WIDTH = 31;
 let bricks = [];
 export function buildLevel(game, level1) {
   level1.forEach((elementY, rowAmount) => {
@@ -8,8 +9,8 @@ export function buildLevel(game, level1) {
       if (elementX === 1) {
         bricks.push(
           new Brick(game, {
-            x: 32 * brickAmount,
-            y: 21 * rowAmount + BRICK_HEIGHT,
+            x: BRICK_WIDTH * brickAmount,
+            y: BRICK_HEIGHT * rowAmount + BRICK_HEIGHT * 2,
           })
         );
       }
