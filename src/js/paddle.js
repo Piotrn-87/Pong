@@ -1,5 +1,4 @@
 const GOLDEN_RATIO = 1.61; //FIBO in px
-const HALF = 2; //Half of paddle and game width
 const MAX_SPEED = 4; //Maximum speed per seconds in px
 const PADDLE_WIDTH = 100; //Paddle width in px
 const PADDLE_HEIGHT = 20; //Paddle height in px
@@ -15,7 +14,7 @@ export default class Paddle {
     this.speedY = SPEED;
     this.maxSpeed = MAX_SPEED;
     this.position = {
-      x: game.gameWidth / HALF - this.paddleWidth / HALF,
+      x: game.gameWidth / 2 - this.paddleWidth / HALF,
       y: game.gameHeight - this.paddleHeight * GOLDEN_RATIO,
     };
 

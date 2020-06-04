@@ -4,8 +4,6 @@ const SIZE = 20; // Ball size in px
 const SPEED = 4; // Ball speed in px
 const GOLDEN_RATIO = 1.61; // FIBONACCI
 
-let pause = false;
-
 export default class Ball {
   constructor(game) {
     this.game = game;
@@ -39,17 +37,18 @@ export default class Ball {
     this.position.x += this.speed.x;
     this.position.y += this.speed.y;
 
-    let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
-    let topOfPaddle = this.game.paddle.position.y;
-    let leftSideOfPaddle = this.game.paddle.position.x;
-    let rightSideOfPaddle =
-      this.game.paddle.position.x + this.game.paddle.paddleWidth;
+    // let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
+    // let topOfPaddle = this.game.paddle.position.y;
+    // let leftSideOfPaddle = this.game.paddle.position.x;
+    // let rightSideOfPaddle =
+    //   this.game.paddle.position.x + this.game.paddle.paddleWidth;
 
-    if (
-      bottomOfBall >= topOfPaddle &&
-      this.position.x + this.size >= leftSideOfPaddle &&
-      this.position.x - this.size <= rightSideOfPaddle
-    ) {
+    // if (
+    //   bottomOfBall >= topOfPaddle &&
+    //   this.position.x + this.size >= leftSideOfPaddle &&
+    //   this.position.x - this.size <= rightSideOfPaddle
+    // )
+    if (collisionDetection(this, this.game.paddle)) {
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.size;
     }
