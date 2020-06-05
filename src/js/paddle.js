@@ -14,7 +14,7 @@ export default class Paddle {
     this.speedY = SPEED;
     this.maxSpeed = MAX_SPEED;
     this.position = {
-      x: game.gameWidth / 2 - this.paddleWidth / HALF,
+      x: game.gameWidth / 2 - this.paddleWidth / 2,
       y: game.gameHeight - this.paddleHeight * GOLDEN_RATIO,
     };
 
