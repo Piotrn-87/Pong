@@ -71,24 +71,6 @@ export default class Paddle {
     this.speedY = 0;
   }
 
-  update() {
-    this.position.x += this.speedX;
-    this.position.y = this.position.y + this.speedY;
-    if (this.position.x < 0) {
-      this.position.x = 3;
-    } else if (this.position.x + this.paddleWidth > this.gameWidth) {
-      this.position.x = this.gameWidth - this.paddleWidth - 3;
-    }
-    if (this.position.y < 0) {
-      this.position.y = 3;
-    } else if (
-      this.position.y >
-      this.gameHeight - this.paddleHeight * GOLDEN_RATIO
-    ) {
-      this.position.y = this.gameHeight - this.paddleHeight * GOLDEN_RATIO;
-    }
-  }
-
   draw(ctx) {
     ctx.fillStyle = `hsl(${hue},100%, 50%)`;
     ctx.fillRect(
@@ -97,6 +79,25 @@ export default class Paddle {
       this.paddleWidth,
       this.paddleHeight
     );
+  }
+
+  update(deltaTime) {
+    this.position.x += this.speedX;
+    // this.position.y += this.speedY;
+    if (this.position.x < 0) {
+      this.position.x = 3;
+    }
+    if (this.position.x + PADDLE_WIDTH > this.gameWidth) {
+      this.position.x = this.gameWidth - PADDLE_WIDTH - 3;
+    }
+    // if (this.position.y < 0) {
+    //   this.position.y = 3;
+    // } else if (
+    //   this.position.y >
+    //   this.gameHeight - this.paddleHeight * GOLDEN_RATIO
+    // ) {
+    //   this.position.y = this.gameHeight - this.paddleHeight * GOLDEN_RATIO;
+    // }
   }
 }
 

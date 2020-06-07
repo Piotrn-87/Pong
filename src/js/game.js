@@ -5,7 +5,7 @@ import { buildLevel, level1 } from "./levels";
 
 const BRICK_WIDTH = 30; // Bricks width in px
 const BRICK_HEIGHT = 20; // Bricks height in px
-let bricks = [];
+
 export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
@@ -13,6 +13,7 @@ export default class Game {
   }
 
   start() {
+    let bricks = [];
     this.ball = new Ball(this);
     this.brick = new Brick(this);
     this.paddle = new Paddle(this);
@@ -20,12 +21,13 @@ export default class Game {
     // for (let i = 0; i < 20; i++) {
     //   bricks.push(new Brick(this, { x: i * BRICK_WIDTH, y: BRICK_HEIGHT }));
     // }
-    this.gameObject = [this.paddle, this.ball, ...bricks];
+
+    this.gameObject = [this.ball, this.paddle, ...bricks];
   }
-  update() {
+  update(deltaTime) {
     // this.paddle.update();
     // this.ball.update();
-    this.gameObject.forEach((element) => element.update());
+    this.gameObject.forEach((element) => element.update(deltaTime));
   }
   draw(ctx) {
     // this.paddle.draw(ctx);

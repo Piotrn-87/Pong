@@ -30,14 +30,17 @@ game = new Game(GAME_WIDTH, GAME_HEIGHT);
 game.start();
 
 function step(timeStamp) {
-  if (!start) start = timeStamp;
-  progress = timeStamp - start;
-  start = progress;
+  // if (!start) start = timeStamp;
+  // progress = timeStamp - start;
+  // start = progress;
+  let lastTime = 0;
+  let deltaTime = timeStamp - lastTime;
+  lastTime = timeStamp;
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
   if (!pause) {
-    game.update(progress);
+    game.update(deltaTime);
   }
   game.draw(ctx);
 
