@@ -1,4 +1,4 @@
-import { detectCollision } from "./collisionDetection";
+import { collisionDetection } from "./collisionDetection";
 const BRICK = document.getElementById("brick");
 const BRICK_WIDTH = 30;
 const BRICK_HEIGHT = 20;
@@ -12,9 +12,9 @@ export default class Brick {
   }
 
   update() {
-    // if (detectCollision(this.game.ball, this)) {
-    //   this.game.ball.speed.y = -this.game.ball.speed.y;
-    // }
+    if (collisionDetection(this.game.ball, this)) {
+      this.game.ball.speed.y = -this.game.ball.speed.y;
+    }
   }
   draw(ctx) {
     ctx.drawImage(

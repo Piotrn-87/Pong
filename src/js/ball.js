@@ -1,4 +1,4 @@
-import { detectCollision } from "./collisionDetection";
+import { collisionDetection } from "./collisionDetection";
 const BALL = document.getElementById("ball");
 const SIZE = 20; // Ball size in px
 const SPEED = 4; // Ball speed in px
@@ -14,7 +14,7 @@ export default class Ball {
     this.speed = { x: SPEED, y: SPEED };
     this.position = {
       x: game.gameWidth / 2 - this.size / 2,
-      y: game.gameHeight / 8,
+      y: game.gameHeight / 2,
     };
   }
   draw(ctx) {
@@ -50,7 +50,7 @@ export default class Ball {
     //   this.position.x - this.size <= rightSideOfPaddle
     // )
 
-    if (detectCollision(this, this.game.paddle)) {
+    if (collisionDetection(this, this.game.paddle)) {
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.size;
     }
