@@ -38,11 +38,11 @@ export default class Ball {
       this.speed.y = -this.speed.y;
     }
 
-    // let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
-    // let topOfPaddle = this.game.paddle.position.y;
-    // let leftSideOfPaddle = this.game.paddle.position.x;
-    // let rightSideOfPaddle =
-    //   this.game.paddle.position.x + this.game.paddle.paddleWidth;
+    let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
+    let topOfPaddle = this.game.paddle.position.y;
+    let leftSideOfPaddle = this.game.paddle.position.x;
+    let rightSideOfPaddle =
+      this.game.paddle.position.x + this.game.paddle.paddleWidth;
 
     // if (
     //   bottomOfBall >= topOfPaddle &&
