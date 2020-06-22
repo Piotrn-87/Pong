@@ -1,6 +1,11 @@
 @import "_normalize";
 @import "_variables";
 
+:root {
+  --background-color: #fefefe;
+  --text-color: #333;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -11,9 +16,9 @@ html {
   box-sizing: inherit;
 }
 
-body {
+.main {
   align-items: center;
-  background-color: lightblue;
+  background: var(--background-color);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -21,6 +26,12 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
+}
+
+.mode--js {
+  position: absolute;
+  left: 1rem;
+  top: 1rem
 }
 
 #canvas {

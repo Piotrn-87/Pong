@@ -5,11 +5,26 @@ const GAME_WIDTH = 620;
 const GAME_HEIGHT = 400;
 const KEYPASUE = 80;
 
+let isDark = false;
 let ctx;
 let game;
 let pause = false;
 let progress;
 let start = null;
+
+const changeButton = document.querySelector(".mode--js");
+changeButton.addEventListener("click", () => {
+  console.log("it works");
+  if (isDark) {
+    document.documentElement.style.setProperty("--background-color", "#fefefe");
+    document.documentElement.style.setProperty("--text-color", "#333");
+    isDark = false;
+  } else {
+    document.documentElement.style.setProperty("--background-color", "#333");
+    document.documentElement.style.setProperty("--text-color", "#fefefe");
+    isDark = true;
+  }
+});
 
 let canvas = document.getElementById(CANVAS);
 if (!canvas) {
