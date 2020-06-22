@@ -29,9 +29,18 @@ html {
 }
 
 .mode--js {
-  position: absolute;
+  background: var(--background-color);
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
   left: 1rem;
-  top: 1rem
+  letter-spacing: 1px;
+  margin: 1rem;
+  overflow: hidden;
+  padding: .5rem 1rem;
+  position: absolute;
+  top: 1rem;
+  text-transform: uppercase;
 }
 
 #canvas {
