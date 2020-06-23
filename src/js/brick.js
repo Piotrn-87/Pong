@@ -12,9 +12,9 @@ export default class Brick {
   }
 
   update() {
-    if (collisionDetection(this.game.ball, this)) {
-      this.game.ball.speed.y = -this.game.ball.speed.y;
-    }
+    // if (collisionDetection(this.game.ball, this)) {
+    //   this.game.ball.speed.y = -this.game.ball.speed.y;
+    // }
   }
   draw(ctx) {
     ctx.drawImage(
