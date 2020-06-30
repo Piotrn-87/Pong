@@ -6,9 +6,9 @@ const GOLDEN_RATIO = 1.61; // FIBONACCI
 
 export default class Ball {
   constructor(game) {
-    this.game = game;
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
+    this.game = game;
     this.image = BALL;
     this.size = SIZE;
     this.speed = { x: SPEED, y: SPEED };
@@ -43,14 +43,21 @@ export default class Ball {
     // let leftSideOfPaddle = this.game.paddle.position.x;
     // let rightSideOfPaddle =
     //   this.game.paddle.position.x + this.game.paddle.paddleWidth;
+    // let leftSideOfBall = this.position.x;
+    // let rightSideOfBall = this.position.x + this.size;
 
     // if (
     //   bottomOfBall >= topOfPaddle &&
-    //   this.position.x + this.size >= leftSideOfPaddle &&
-    //   this.position.x - this.size <= rightSideOfPaddle
-    // )
+    //   leftSideOfBall >= leftSideOfPaddle &&
+    //   rightSideOfBall <= rightSideOfPaddle
+    // ) {
+    //   console.log("dfsflkmsn");
+    //   this.speed.y = -this.speed.y;
+    //   this.position.y = this.game.paddle.position.y - this.size;
+    // }
 
     if (collisionDetection(this, this.game.paddle)) {
+      console.log("dkfl");
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.size;
     }
