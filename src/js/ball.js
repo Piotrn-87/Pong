@@ -2,7 +2,6 @@ import { collisionDetection } from "./collisionDetection";
 const BALL = document.getElementById("ball");
 const SIZE = 20; // Ball size in px
 const SPEED = 4; // Ball speed in px
-const GOLDEN_RATIO = 1.61; // FIBONACCI
 
 export default class Ball {
   constructor(game) {
