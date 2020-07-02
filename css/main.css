@@ -354,7 +354,8 @@ html {
   padding: .5rem 1rem;
   position: absolute;
   top: 1rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  cursor: pointer; }
 
 #canvas {
   background: #fff;
