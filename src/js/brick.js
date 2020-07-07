@@ -14,7 +14,6 @@ export default class Brick {
 
   update() {
     if (collisionDetection(this.game.ball, this)) {
-      console.log("dnvskjv");
       this.game.ball.speed.y = -this.game.ball.speed.y;
       this.deletion = true;
     }
