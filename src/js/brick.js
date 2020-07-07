@@ -6,14 +6,17 @@ export default class Brick {
   constructor(game, position) {
     this.image = BRICK;
     this.game = game;
-    this.width = BRICK_WIDTH;
-    this.height = BRICK_HEIGHT;
+    this.gameWidth = BRICK_WIDTH;
+    this.gameHeight = BRICK_HEIGHT;
     this.position = position;
+    this.deletion = false;
   }
 
   update() {
     if (collisionDetection(this.game.ball, this)) {
+      console.log("dnvskjv");
       this.game.ball.speed.y = -this.game.ball.speed.y;
+      this.deletion = true;
     }
   }
   draw(ctx) {
@@ -21,8 +24,8 @@ export default class Brick {
       this.image,
       this.position.x,
       this.position.y,
-      this.width,
-      this.height
+      this.gameWidth,
+      this.gameHeight
     );
   }
 }

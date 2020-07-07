@@ -14,7 +14,6 @@ let start = null;
 
 const changeButton = document.querySelector(".mode--js");
 changeButton.addEventListener("click", () => {
-  console.log("it works");
   if (isDark) {
     document.documentElement.style.setProperty("--background-color", "#fefefe");
     document.documentElement.style.setProperty("--text-color", "#333");
@@ -47,17 +46,17 @@ game = new Game(GAME_WIDTH, GAME_HEIGHT);
 game.start();
 
 function step(timeStamp) {
-  // if (!start) start = timeStamp;
-  // progress = timeStamp - start;
-  // start = progress;
-  let lastTime = 0;
-  let deltaTime = timeStamp - lastTime;
-  lastTime = timeStamp;
+  if (!start) start = timeStamp;
+  progress = timeStamp - start;
+  start = progress;
+  // let lastTime = 0;
+  // let deltaTime = timeStamp - lastTime;
+  // lastTime = timeStamp;
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
   if (!pause) {
-    game.update(deltaTime);
+    game.update(progress);
   }
   game.draw(ctx);
 

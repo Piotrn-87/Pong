@@ -24,10 +24,11 @@ export default class Game {
 
     this.gameObject = [this.ball, this.paddle, ...bricks];
   }
-  update(deltaTime) {
+  update(progress) {
     // this.paddle.update();
     // this.ball.update();
-    this.gameObject.forEach((element) => element.update(deltaTime));
+    this.gameObject.forEach((element) => element.update(progress));
+    this.gameObject = this.gameObject.filter((object) => !object.deletion);
   }
   draw(ctx) {
     // this.paddle.draw(ctx);

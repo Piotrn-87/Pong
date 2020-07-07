@@ -26,7 +26,7 @@ export default class Ball {
     );
   }
 
-  update(deltaTime) {
+  update() {
     this.position.x += this.speed.x;
     this.position.y += this.speed.y;
     if (this.position.x + this.size > this.gameWidth || this.position.x < 0) {
@@ -36,27 +36,7 @@ export default class Ball {
     if (this.position.y + this.size > this.gameHeight || this.position.y < 0) {
       this.speed.y = -this.speed.y;
     }
-
-    // let bottomOfBall = this.position.y + this.size - GOLDEN_RATIO;
-    // let topOfPaddle = this.game.paddle.position.y;
-    // let leftSideOfPaddle = this.game.paddle.position.x;
-    // let rightSideOfPaddle =
-    //   this.game.paddle.position.x + this.game.paddle.paddleWidth;
-    // let leftSideOfBall = this.position.x;
-    // let rightSideOfBall = this.position.x + this.size;
-
-    // if (
-    //   bottomOfBall >= topOfPaddle &&
-    //   leftSideOfBall >= leftSideOfPaddle &&
-    //   rightSideOfBall <= rightSideOfPaddle
-    // ) {
-    //   console.log("dfsflkmsn");
-    //   this.speed.y = -this.speed.y;
-    //   this.position.y = this.game.paddle.position.y - this.size;
-    // }
-
     if (collisionDetection(this, this.game.paddle)) {
-      console.log("dkfl");
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.size;
     }
