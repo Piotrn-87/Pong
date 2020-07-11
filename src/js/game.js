@@ -18,10 +18,6 @@ export default class Game {
     this.brick = new Brick(this);
     this.paddle = new Paddle(this);
     bricks = buildLevel(this, level1);
-    // for (let i = 0; i < 20; i++) {
-    //   bricks.push(new Brick(this, { x: i * BRICK_WIDTH, y: BRICK_HEIGHT }));
-    // }
-
     this.gameObject = [this.ball, this.paddle, ...bricks];
   }
   update(progress) {

@@ -5,10 +5,10 @@ export function collisionDetection(ball, gameObject) {
   let leftSideOfBall = ball.position.x;
   let rightSideOfBall = ball.position.x + ball.size;
 
-  let bottomOfObject = gameObject.position.y + gameObject.gameHeight;
   let topOfObject = gameObject.position.y;
   let leftSideOfObject = gameObject.position.x;
-  let rightSideOfObject = gameObject.position.x + gameObject.gameWidth;
+  let rightSideOfObject = gameObject.position.x + gameObject.width;
+  let bottomOfObject = gameObject.position.y + gameObject.height;
 
   if (
     bottomOfBall >= topOfObject &&

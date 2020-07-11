@@ -1,7 +1,7 @@
 import Brick from "./brick";
 
-const BRICK_HEIGHT = 21;
-const BRICK_WIDTH = 31;
+const BRICK_HEIGHT = 20;
+const BRICK_WIDTH = 30;
 
 export function buildLevel(game, level) {
   let bricks = [];

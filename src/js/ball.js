@@ -5,10 +5,10 @@ const SPEED = 4; // Ball speed in px
 
 export default class Ball {
   constructor(game) {
+    this.image = BALL;
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
     this.game = game;
-    this.image = BALL;
     this.size = SIZE;
     this.speed = { x: SPEED, y: SPEED };
     this.position = {

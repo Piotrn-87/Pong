@@ -6,8 +6,8 @@ export default class Brick {
   constructor(game, position) {
     this.image = BRICK;
     this.game = game;
-    this.gameWidth = BRICK_WIDTH;
-    this.gameHeight = BRICK_HEIGHT;
+    this.width = BRICK_WIDTH;
+    this.height = BRICK_HEIGHT;
     this.position = position;
     this.deletion = false;
   }
@@ -23,8 +23,8 @@ export default class Brick {
       this.image,
       this.position.x,
       this.position.y,
-      this.gameWidth,
-      this.gameHeight
+      this.width,
+      this.height
     );
   }
 }
