@@ -88,11 +88,8 @@ export default class Paddle {
     }
     if (this.position.y < 0) {
       this.position.y = 3;
-    } else if (
-      this.position.y >
-      this.gameHeight - this.paddleHeight * GOLDEN_RATIO
-    ) {
-      this.position.y = this.gameHeight - this.paddleHeight * GOLDEN_RATIO;
+    } else if (this.position.y > this.gameHeight - this.height * GOLDEN_RATIO) {
+      this.position.y = this.gameHeight - this.height * GOLDEN_RATIO;
     }
   }
 }
