@@ -17,7 +17,7 @@ changeButton.addEventListener("click", () => {
   if (isDark) {
     document.documentElement.style.setProperty("--background-color", "#fefefe");
     document.documentElement.style.setProperty("--text-color", "#333");
-    changeButton.innerHTML = "dark theme";
+    changeButton.innerHTML = "drakula theme";
     isDark = false;
   } else {
     document.documentElement.style.setProperty("--background-color", "#333");
@@ -59,6 +59,16 @@ function step(timeStamp) {
     game.update(progress);
   }
   game.draw(ctx);
+  if (pause) {
+    ctx.rect(0, 0, 600, 400);
+    ctx.fillStyle = "rgba(0,0,0, .3)";
+    ctx.fill();
+
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("Paused", GAME_WIDTH / 2, GAME_HEIGHT / 2);
+  }
 
   requestAnimationFrame(step);
 }
