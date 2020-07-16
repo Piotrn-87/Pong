@@ -4,6 +4,7 @@
 
 `npm install`
 
-`gulp`
+`gulp`.
+
 
 To publish your page using github pages use `npm run deploy`
