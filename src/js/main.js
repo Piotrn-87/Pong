@@ -4,6 +4,8 @@ const CANVAS = "canvas";
 const GAME_WIDTH = 600;
 const GAME_HEIGHT = 400;
 const KEYPASUE = 80;
+const SPACEBAR = 32;
+const CHANGEBUTTON = document.querySelector(".mode--js");
 
 let isDark = false;
 let ctx;
@@ -11,18 +13,18 @@ let game;
 let pause = false;
 let progress;
 let start = null;
+let spaceBar = false;
 
-const changeButton = document.querySelector(".mode--js");
-changeButton.addEventListener("click", () => {
+CHANGEBUTTON.addEventListener("click", () => {
   if (isDark) {
     document.documentElement.style.setProperty("--background-color", "#fefefe");
     document.documentElement.style.setProperty("--text-color", "#333");
-    changeButton.innerHTML = "drakula theme";
+    CHANGEBUTTON.innerHTML = "drakula theme";
     isDark = false;
   } else {
     document.documentElement.style.setProperty("--background-color", "#333");
     document.documentElement.style.setProperty("--text-color", "#fefefe");
-    changeButton.innerHTML = "light theme";
+    CHANGEBUTTON.innerHTML = "light theme";
     isDark = true;
   }
 });
@@ -39,6 +41,10 @@ function keyDown(event) {
   switch (event.keyCode) {
     case KEYPASUE:
       pause = !pause;
+      break;
+    case SPACEBAR:
+      spaceBar = !spaceBar;
+      break;
   }
 }
 
@@ -52,10 +58,22 @@ function step(timeStamp) {
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
-  if (!pause) {
+  if (!pause && spaceBar) {
     game.update(progress);
   }
   game.draw(ctx);
+
+  if (!spaceBar) {
+    ctx.rect(0, 0, 600, 400);
+    ctx.fillStyle = "rgba(0,0,0, .3)";
+    ctx.fill();
+
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.fillText("Press spacebar to start", GAME_WIDTH / 2, GAME_HEIGHT / 2);
+  }
+
   if (pause) {
     ctx.rect(0, 0, 600, 400);
     ctx.fillStyle = "rgba(0,0,0, .3)";
