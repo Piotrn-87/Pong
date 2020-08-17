@@ -58,21 +58,21 @@ function step(timeStamp) {
 
   ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
-  if (!pause && spaceBar) {
+  if (!pause) {
     game.update(progress);
   }
   game.draw(ctx);
 
-  if (!spaceBar) {
-    ctx.rect(0, 0, 600, 400);
-    ctx.fillStyle = "rgba(0,0,0, .3)";
-    ctx.fill();
+  // if (!spaceBar) {
+  //   ctx.rect(0, 0, 600, 400);
+  //   ctx.fillStyle = "rgba(0,0,0, .9)";
+  //   ctx.fill();
 
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "white";
-    ctx.textAlign = "center";
-    ctx.fillText("Press spacebar to start", GAME_WIDTH / 2, GAME_HEIGHT / 2);
-  }
+  //   ctx.font = "30px Arial";
+  //   ctx.fillStyle = "white";
+  //   ctx.textAlign = "center";
+  //   ctx.fillText("Press spacebar to start", GAME_WIDTH / 2, GAME_HEIGHT / 2);
+  // }
 
   if (pause) {
     ctx.rect(0, 0, 600, 400);
