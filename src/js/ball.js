@@ -10,7 +10,7 @@ export default class Ball {
     this.gameHeight = game.gameHeight;
     this.game = game;
     this.size = SIZE;
-    this.speed = { x: SPEED, y: SPEED };
+    this.speed = { x: -SPEED, y: -SPEED };
     this.position = {
       x: game.gameWidth / 2 - this.size / 2,
       y: game.gameHeight / 2,

@@ -1,8 +1,8 @@
 const GOLDEN_RATIO = 1.61;
 export function collisionDetection(ball, gameObject) {
   let bottomOfBall = ball.position.y + ball.size - GOLDEN_RATIO;
-  let topOfBall = ball.position.y;
   let leftSideOfBall = ball.position.x;
+  let topOfBall = ball.position.y;
   let rightSideOfBall = ball.position.x + ball.size;
 
   let topOfObject = gameObject.position.y;

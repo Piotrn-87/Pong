@@ -7,13 +7,13 @@ const KEYPASUE = 80;
 const SPACEBAR = 32;
 const CHANGEBUTTON = document.querySelector(".mode--js");
 
-let isDark = false;
 let ctx;
 let game;
+let isDark = false;
 let pause = false;
 let progress;
-let start = null;
 let spaceBar = false;
+let start = null;
 
 CHANGEBUTTON.addEventListener("click", () => {
   if (isDark) {
@@ -43,12 +43,14 @@ function keyDown(event) {
       pause = !pause;
       break;
     case SPACEBAR:
+      game.start();
       spaceBar = !spaceBar;
       break;
   }
 }
 
 game = new Game(GAME_WIDTH, GAME_HEIGHT);
+
 game.start();
 
 function step(timeStamp) {
@@ -88,7 +90,3 @@ function step(timeStamp) {
   requestAnimationFrame(step);
 }
 requestAnimationFrame(step);
-
-// let lastTime = 0;
-// let deltaTime = timeStamp - lastTime;
-// lastTime = timeStamp;

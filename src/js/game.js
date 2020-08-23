@@ -3,11 +3,22 @@ import Ball from "./ball";
 import Brick from "./brick";
 import { buildLevel, level1 } from "./levels";
 
+// const SPACEBAR = 32;
+
 const GAMESTATE = {
   MENU: 2,
   GAMEOVER: 3,
 };
 
+// document.addEventListener("keydown", keyDown);
+
+// function keyDown(event) {
+//   switch (event.keyCode) {
+//     case SPACEBAR:
+//       game.start();
+//       break;
+//   }
+// }
 export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
@@ -36,7 +47,7 @@ export default class Game {
 
     // if (this.gamestate === GAMESTATE.MENU) {
     //   ctx.rect(0, 0, 600, 400);
-    //   ctx.fillStyle = "rgba(0,0,0, .9)";
+    //   ctx.fillStyle = "rgba(0,0,0, 1)";
     //   ctx.fill();
     //   ctx.font = "30px Arial";
     //   ctx.fillStyle = "white";
