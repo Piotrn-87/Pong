@@ -1,9 +1,9 @@
 # Pong
 
-`npm install -g gulp-cli`.
+`npm install -g gulp-cli`
 
-`npm install`.
+`npm install`
 
-`gulp`.
+`gulp`
 
 To publish your page using github pages use `npm run deploy`
