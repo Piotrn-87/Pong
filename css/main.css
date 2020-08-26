@@ -383,4 +383,7 @@ html {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
+.brick {
+  display: none; }
+
 /*# sourceMappingURL=main.css.map */
