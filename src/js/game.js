@@ -9,16 +9,6 @@ const GAMESTATE = {
   MENU: 2,
   GAMEOVER: 3,
 };
-
-// document.addEventListener("keydown", keyDown);
-
-// function keyDown(event) {
-//   switch (event.keyCode) {
-//     case SPACEBAR:
-//       game.start();
-//       break;
-//   }
-// }
 export default class Game {
   constructor(gameWidth, gameHeight) {
     this.gameWidth = gameWidth;
@@ -33,9 +23,17 @@ export default class Game {
     this.paddle = new Paddle(this);
     bricks = buildLevel(this, level1);
     this.gameObject = [this.ball, this.paddle, ...bricks];
+    this.lives = 3;
   }
   update(progress) {
-    // if (this.gamestate === GAMESTATE.MENU) return;
+    if (this.lives === 0) {
+      this.gamestate = GAMESTATE.GAMEOVER;
+    }
+
+    if (this.gamestate === GAMESTATE.GAMEOVER) {
+      return;
+    }
+
     this.gameObject.forEach((element) => element.update(progress));
     this.gameObject = this.gameObject.filter((object) => !object.deletion);
   }
@@ -45,18 +43,14 @@ export default class Game {
     // this.brick.draw(ctx);
     this.gameObject.forEach((element) => element.draw(ctx));
 
-    // if (this.gamestate === GAMESTATE.MENU) {
-    //   ctx.rect(0, 0, 600, 400);
-    //   ctx.fillStyle = "rgba(0,0,0, 1)";
-    //   ctx.fill();
-    //   ctx.font = "30px Arial";
-    //   ctx.fillStyle = "white";
-    //   ctx.textAlign = "center";
-    //   ctx.fillText(
-    //     "Press SPACEBAR To Start",
-    //     this.gameWidth / 2,
-    //     this.gameHeight / 2
-    //   );
-    // }
+    if (this.gamestate === GAMESTATE.GAMEOVER) {
+      ctx.rect(0, 0, 600, 400);
+      ctx.fillStyle = "rgba(0,0,0, 1)";
+      ctx.fill();
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "white";
+      ctx.textAlign = "center";
+      ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2);
+    }
   }
 }

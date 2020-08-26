@@ -20,7 +20,7 @@ export default class Paddle {
     };
 
     document.addEventListener("keydown", (event) => {
-      hue += GOLDEN_RATIO;
+      hue += GOLDEN_RATIO / 5;
       switch (event.keyCode) {
         case 37:
           this.moveLeft();

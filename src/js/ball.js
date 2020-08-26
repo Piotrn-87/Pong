@@ -6,16 +6,19 @@ const SPEED = 4; // Ball speed in px
 export default class Ball {
   constructor(game) {
     this.image = BALL;
+    this.game = game;
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
     this.game = game;
     this.size = SIZE;
-    this.speed = { x: -SPEED, y: -SPEED };
-    this.position = {
-      x: game.gameWidth / 2 - this.size / 2,
-      y: game.gameHeight / 2,
-    };
+    this.reset();
   }
+
+  reset() {
+    this.speed = { x: -SPEED, y: -SPEED };
+    this.position = { x: 300, y: 200 };
+  }
+
   draw(ctx) {
     ctx.drawImage(
       this.image,
@@ -35,6 +38,12 @@ export default class Ball {
     if (this.position.y + this.size > this.gameHeight || this.position.y < 0) {
       this.speed.y = -this.speed.y;
     }
+
+    if (this.position.y + this.size > this.gameHeight) {
+      this.game.lives--;
+      this.reset();
+    }
+
     if (collisionDetection(this, this.game.paddle)) {
       this.speed.y = -this.speed.y;
       this.position.y = this.game.paddle.position.y - this.size;
